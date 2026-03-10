@@ -1,0 +1,175 @@
+﻿cargo :     Checking to
+posynth v0.1.0 (E:\Proj
+ects\toposynth)
+発生場所 行:1 文字:1
++ cargo check > build_e
+rror.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (    Checking    
+ to...ects\toposynt    
+h):String) [], Rem    o
+teException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+warning: unused variabl
+e: `shaper_mode`
+   --> src\lib.rs:252:1
+3
+    |
+252 |         let shape
+r_mode = self.params.sh
+aper_mode.value();
+    |             ^^^^^
+^^^^^^ help: if this is
+ intentional, prefix it
+ with an underscore: `_
+shaper_mode`
+    |
+    = note: `#[warn(unu
+sed_variables)]` (part 
+of `#[warn(unused)]`) o
+n by default
+
+warning: type `Trajecto
+ry` is more private tha
+n the item `TrajectoryV
+iew::new`
+  --> src\editor.rs:65:
+5
+   |
+65 |     pub fn new(cx:
+ &mut Context, trajecto
+ry: Arc<std::sync::RwLo
+ck<Trajectory>>) -> Han
+dle<Self> {
+   |     ^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^ associated fu
+nction `TrajectoryView:
+:new` is reachable at v
+isibility `pub`
+   |
+note: but type `Traject
+ory` is only usable at 
+visibility `pub(crate)`
+  --> src\lib.rs:24:1
+   |
+24 | pub(crate) struct 
+Trajectory {
+   | ^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^
+   = note: `#[warn(priv
+ate_interfaces)]` on by
+ default
+
+warning: type `Trajecto
+ry` is more private tha
+n the item `create_edit
+or`
+   --> src\editor.rs:10
+4:1
+    |
+104 | / pub fn create_e
+ditor(
+105 | |     params: Arc
+<ToposynthParams>,
+106 | |     trajectory:
+ Arc<std::sync::RwLock<
+Trajectory>>,
+107 | | ) -> Option<Box
+<dyn Editor>> {
+    | |________________
+____________^ function 
+`create_editor` is reac
+hable at visibility `pu
+b`
+    |
+note: but type `Traject
+ory` is only usable at 
+visibility `pub(crate)`
+   --> src\lib.rs:24:1
+    |
+ 24 | pub(crate) struct
+ Trajectory {
+    | ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^
+
+warning: field `filter_
+z` is never read
+  --> src\lib.rs:17:5
+   |
+12 | struct Voice {
+   |        ----- field
+ in this struct
+...
+17 |     filter_z: [f32
+; 4],
+   |     ^^^^^^^^
+   |
+   = note: `Voice` has 
+a derived impl for the 
+trait `Clone`, but this
+ is intentionally ignor
+ed during dead code ana
+lysis
+   = note: `#[warn(dead
+_code)]` (part of `#[wa
+rn(unused)]`) on by def
+ault
+
+warning: hiding a lifet
+ime that's elided elsew
+here is confusing
+  --> src\editor.rs:65:
+20
+   |
+65 |     pub fn new(cx:
+ &mut Context, trajecto
+ry: Arc<std::sync::RwLo
+ck<Trajectory>>) -> Han
+dle<Self> {
+   |                   
+ ^^^^^^^^^^^^ the lifet
+ime is elided here     
+                    ^^^
+^^^^^^^^^ the same life
+time is hidden here
+   |
+   = help: the same lif
+etime is referred to in
+ inconsistent ways, mak
+ing the signature confu
+sing
+   = note: `#[warn(mism
+atched_lifetime_syntaxe
+s)]` on by default
+help: use `'_` for type
+ paths
+   |
+65 |     pub fn new(cx:
+ &mut Context, trajecto
+ry: Arc<std::sync::RwLo
+ck<Trajectory>>) -> Han
+dle<'_, Self> {
+   |                   
+                       
+                       
+                       
+    +++
+
+warning: `toposynth` (l
+ib) generated 5 warning
+s (run `cargo fix --lib
+ -p toposynth` to apply
+ 2 suggestions)
+    Finished `dev` prof
+ile [unoptimized + debu
+ginfo] target(s) in 0.6
+6s

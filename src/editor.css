@@ -1,0 +1,12 @@
+.section-header {
+    font-size: 14.0;
+    font-weight: bold;
+    color: #00ffc8;
+    margin-top: 10.0;
+    margin-bottom: 5.0;
+}
+
+trajectory-view {
+    border-color: #333333;
+    border-width: 1px;
+}
